@@ -11,6 +11,7 @@ Iterable<Widget> modulovalueTitle(String title, String repo) {
         fontWeight: FontWeight.w700,
         fontSize: 42.0,
       ),
+      textAlign: TextAlign.center,
     ),
     SizedBox(height: 6.0),
     GestureDetector(
@@ -24,6 +25,7 @@ Iterable<Widget> modulovalueTitle(String title, String repo) {
           fontSize: 12.0,
           decoration: TextDecoration.underline,
         ),
+        textAlign: TextAlign.center,
       ),
     ),
     SizedBox(height: 4.0),
@@ -31,13 +33,14 @@ Iterable<Widget> modulovalueTitle(String title, String repo) {
       onTap: () => js.context
           .callMethod("open", ["https://github.com/modulovalue/$repo"]),
       child: Text(
-        "Github",
+        "GitHub",
         style: TextStyle(
           fontWeight: FontWeight.w700,
           color: Colors.grey[700],
           fontSize: 12.0,
           decoration: TextDecoration.underline,
         ),
+        textAlign: TextAlign.center,
       ),
     ),
   ];
