@@ -1,0 +1,44 @@
+import 'dart:js' as js;
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+Iterable<Widget> modulovalueTitle(String title, String repo) {
+  return [
+    Text(
+      title,
+      style: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 42.0,
+      ),
+    ),
+    SizedBox(height: 6.0),
+    GestureDetector(
+      onTap: () =>
+          js.context.callMethod("open", ["https://twitter.com/modulovalue"]),
+      child: Text(
+        "by @modulovalue",
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+          color: Colors.grey[700],
+          fontSize: 12.0,
+          decoration: TextDecoration.underline,
+        ),
+      ),
+    ),
+    SizedBox(height: 4.0),
+    GestureDetector(
+      onTap: () => js.context
+          .callMethod("open", ["https://github.com/modulovalue/$repo"]),
+      child: Text(
+        "Github",
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+          color: Colors.grey[700],
+          fontSize: 12.0,
+          decoration: TextDecoration.underline,
+        ),
+      ),
+    ),
+  ];
+}
